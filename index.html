@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novità Editoriali 2026 - Pagina43</title>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: #f5f7fa;
+      color: #2c3e50;
+      line-height: 1.6;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .header p {
+      opacity: 0.9;
+      font-size: 1.1rem;
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    
+    .tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      border-bottom: 3px solid #e0e0e0;
+    }
+    
+    .tab {
+      padding: 1rem 2rem;
+      background: white;
+      border: none;
+      border-radius: 8px 8px 0 0;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #666;
+      transition: all 0.3s;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -3px;
+    }
+    
+    .tab:hover {
+      background: #f8f9fa;
+      color: #667eea;
+    }
+    
+    .tab.active {
+      background: white;
+      color: #667eea;
+      border-bottom: 3px solid #667eea;
+    }
+    
+    .main-layout {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    
+    .sidebar {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 1rem;
+    }
+    
+    .sidebar h3 {
+      margin-bottom: 1rem;
+      color: #667eea;
+      font-size: 1.2rem;
+    }
+    
+    .disciplina-item {
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.5rem;
+      background: #f8f9fa;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 2px solid transparent;
+    }
+    
+    .disciplina-item:hover {
+      background: #e3f2fd;
+      transform: translateX(5px);
+    }
+    
+    .disciplina-item.active {
+      background: #667eea;
+      color: white;
+      font-weight: 600;
+      border: 2px solid #764ba2;
+    }
+    
+    .disciplina-item .count {
+      margin-left: auto;
+      background: rgba(255,255,255,0.3);
+      padding: 0.25rem 0.5rem;
+      border-radius: 12px;
+      font-size: 0.85rem;
+    }
+    
+    .libri-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    
+    .libro-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      transition: all 0.3s;
+      cursor: pointer;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .libro-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.25);
+    }
+    
+    .libro-copertina {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 4rem;
+    }
+    
+    .libro-copertina img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .libro-info {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .libro-titolo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+    
+    .libro-editore {
+      color: #7f8c8d;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    
+    .libro-badges {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    
+    .badge {
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    
+    .badge-grado {
+      background: #e3f2fd;
+      color: #1976d2;
+    }
+    
+    .badge-disciplina {
+      background: #f3e5f5;
+      color: #7b1fa2;
+    }
+    
+    .badge-novita {
+      background: #fff3e0;
+      color: #f57c00;
+    }
+    
+    .libro-actions {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: auto;
+    }
+    
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      flex: 1;
+      text-align: center;
+    }
+    
+    .btn:active {
+      transform: scale(0.95);
+    }
+    
+    .btn-primary {
+      background: #667eea;
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background: #764ba2;
+      transform: scale(1.02);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #667eea;
+      color: #667eea;
+      padding: 0.5rem;
+    }
+    
+    .btn-outline:hover {
+      background: #667eea;
+      color: white;
+    }
+    
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 1000;
+      padding: 1rem;
+      overflow-y: auto;
+    }
+    
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .modal-content {
+      background: white;
+      border-radius: 16px;
+      max-width: 900px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+    }
+    
+    .modal-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 16px 16px 0 0;
+      position: relative;
+    }
+    
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: white;
+      font-size: 2rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    
+    .modal-close:hover {
+      background: rgba(255,255,255,0.3);
+      transform: rotate(90deg);
+    }
+    
+    .modal-body {
+      padding: 2rem;
+    }
+    
+    .modal-section {
+      margin-bottom: 2rem;
+    }
+    
+    .modal-section h3 {
+      color: #667eea;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .materiali-list {
+      display: grid;
+      gap: 1rem;
+    }
+    
+    .materiale-item {
+      background: #f8f9fa;
+      padding: 1rem;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: all 0.2s;
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    .materiale-item:hover {
+      background: #e3f2fd;
+      transform: translateX(5px);
+    }
+    
+    .materiale-icon {
+      font-size: 2rem;
+    }
+    
+    .materiale-info {
+      flex: 1;
+    }
+    
+    .materiale-nome {
+      font-weight: 600;
+      color: #2c3e50;
+    }
+    
+    .materiale-desc {
+      font-size: 0.9rem;
+      color: #7f8c8d;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+    
+    .form-label .required {
+      color: #e74c3c;
+    }
+    
+    .form-input,
+    .form-select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.2s;
+    }
+    
+    .form-input:focus,
+    .form-select:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    
+    .loading {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: #7f8c8d;
+    }
+    
+    .empty-state {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: #7f8c8d;
+    }
+    
+    .empty-icon {
+      font-size: 5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .toast {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: white;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transform: translateX(400px);
+      transition: transform 0.3s;
+    }
+    
+    .toast.show {
+      transform: translateX(0);
+    }
+    
+    .toast-success {
+      border-left: 4px solid #27ae60;
+    }
+    
+    .toast-error {
+      border-left: 4px solid #e74c3c;
+    }
+    
+    @media (max-width: 968px) {
+      .main-layout {
+        grid-template-columns: 1fr;
+      }
+      
+      .sidebar {
+        position: relative;
+        top: 0;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 1.5rem;
+      }
+      
+      .tabs {
+        flex-direction: column;
+      }
+      
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>📚 Novità Editoriali 2026</h1>
+    <p>Scopri le ultime pubblicazioni per l'anno scolastico 2025-26</p>
+  </div>
+
+  <div class="container">
+    
+    <div class="tabs">
+      <button class="tab active" onclick="switchGrado('ss1')">
+        📘 Secondaria I Grado
+      </button>
+      <button class="tab" onclick="switchGrado('ss2')">
+        📕 Secondaria II Grado
+      </button>
+    </div>
+
+    <div class="main-layout">
+      
+      <div class="sidebar">
+        <h3>🎯 Discipline</h3>
+        <div id="discipline-list"></div>
+      </div>
+
+      <div>
+        <div id="libri-container">
+          <div class="loading">
+            <div style="font-size: 3rem;">⏳</div>
+            <p>Caricamento novità...</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="modal-dettaglio" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="modal-close" onclick="chiudiModal()">×</button>
+        <h2 id="modal-titolo">Titolo Libro</h2>
+        <p id="modal-editore">Editore</p>
+      </div>
+      <div class="modal-body" id="modal-body-content"></div>
+    </div>
+  </div>
+
+  <div id="modal-richiesta" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="modal-close" onclick="chiudiModalRichiesta()">×</button>
+        <h2>📝 Richiedi Saggio Gratuito</h2>
+      </div>
+      <div class="modal-body">
+        <div id="libro-selezionato-info" style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 2rem;"></div>
+        
+        <form id="form-richiesta" onsubmit="inviaRichiesta(event)">
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Nome <span class="required">*</span></label>
+              <input type="text" class="form-input" id="input-nome" required placeholder="Mario">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Cognome <span class="required">*</span></label>
+              <input type="text" class="form-input" id="input-cognome" required placeholder="Rossi">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email <span class="required">*</span></label>
+            <input type="email" class="form-input" id="input-email" required placeholder="mario.rossi@scuola.it">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Provincia <span class="required">*</span></label>
+            <select class="form-select" id="input-provincia" required onchange="caricaComuni()">
+              <option value="">Seleziona provincia</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Comune <span class="required">*</span></label>
+            <select class="form-select" id="input-comune" required onchange="caricaScuole()" disabled>
+              <option value="">Prima seleziona la provincia</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Scuola <span class="required">*</span></label>
+            <select class="form-select" id="input-scuola" required disabled>
+              <option value="">Prima seleziona il comune</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Disciplina insegnata <span class="required">*</span></label>
+            <select class="form-select" id="input-disciplina" required>
+              <option value="">Seleziona disciplina</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Note aggiuntive</label>
+            <textarea class="form-input" id="input-note" rows="3" placeholder="Es: Vorrei valutare per adozione A.S. 2026/27"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            📤 Invia Richiesta Saggio
+          </button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+    
+    const supabaseUrl = 'https://dhckkseygocebezqthkk.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRoY2trc2V5Z29jZWJlenF0aGtrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM1MjQ2OTYsImV4cCI6MjA2OTEwMDY5Nn0.0sn6G1GxexfLobXnlRhRkK8cPD92Kmok1MZSi6W6ubE';
+    
+    window.supabase = createClient(supabaseUrl, supabaseKey);
+    
+    console.log('✅ Supabase inizializzato');
+    initPortale();
+  </script>
+
+  <script>
+    const DISCIPLINE = {
+      ss1: [
+        { id: 'italiano', nome: 'Italiano', icon: '📖' },
+        { id: 'matematica', nome: 'Matematica', icon: '🔢' },
+        { id: 'storia', nome: 'Storia', icon: '📜' },
+        { id: 'geografia', nome: 'Geografia', icon: '🌍' },
+        { id: 'scienze', nome: 'Scienze', icon: '🔬' },
+        { id: 'inglese', nome: 'Inglese', icon: '🇬🇧' },
+        { id: 'francese', nome: 'Francese', icon: '🇫🇷' },
+        { id: 'spagnolo', nome: 'Spagnolo', icon: '🇪🇸' },
+        { id: 'arte', nome: 'Arte e Immagine', icon: '🎨' },
+        { id: 'musica', nome: 'Musica', icon: '🎵' },
+        { id: 'tecnologia', nome: 'Tecnologia', icon: '⚙️' },
+        { id: 'ed_fisica', nome: 'Educazione Fisica', icon: '⚽' },
+        { id: 'religione', nome: 'Religione', icon: '✝️' }
+      ],
+      ss2: [
+        { id: 'italiano', nome: 'Italiano', icon: '📖' },
+        { id: 'matematica', nome: 'Matematica', icon: '🔢' },
+        { id: 'storia', nome: 'Storia', icon: '📜' },
+        { id: 'filosofia', nome: 'Filosofia', icon: '🤔' },
+        { id: 'fisica', nome: 'Fisica', icon: '⚛️' },
+        { id: 'chimica', nome: 'Chimica', icon: '🧪' },
+        { id: 'inglese', nome: 'Inglese', icon: '🇬🇧' },
+        { id: 'latino', nome: 'Latino', icon: '🏛️' },
+        { id: 'greco', nome: 'Greco', icon: '🏺' },
+        { id: 'economia', nome: 'Economia', icon: '💼' },
+        { id: 'diritto', nome: 'Diritto', icon: '⚖️' },
+        { id: 'informatica', nome: 'Informatica', icon: '💻' }
+      ]
+    };
+
+    let gradoAttivo = 'ss1';
+    let disciplinaAttiva = null;
+    let tuttiLibri = [];
+    let tuttiMateriali = [];  // ⬅️ AGGIUNTO
+    let libroSelezionato = null;
+    let province = [];
+    let scuole = [];
+
+    async function initPortale() {
+      console.log('🚀 Inizializzazione...');
+      await caricaProvince();
+      await caricaMateriali();  // ⬅️ AGGIUNTO
+      await caricaLibri();
+      renderDiscipline();
+      popolaSelectDiscipline();
+    }
+
+    // ⬇️⬇️⬇️ FUNZIONE NUOVA ⬇️⬇️⬇️
+    async function caricaMateriali() {
+      try {
+        const { data, error } = await window.supabase
+          .from('materiali_promozionali')
+          .select('*')
+          .eq('attivo', true);
+
+        if (error) throw error;
+
+        tuttiMateriali = data || [];
+        console.log(`✅ Caricati ${tuttiMateriali.length} materiali`);
+        
+      } catch (error) {
+        console.error('❌ Errore caricamento materiali:', error);
+        tuttiMateriali = [];
+      }
+    }
+    // ⬆️⬆️⬆️ FINE FUNZIONE NUOVA ⬆️⬆️⬆️
+
+    async function caricaLibri() {
+      try {
+        const { data, error } = await window.supabase
+          .from('novita_2026')
+          .select('*')
+          .eq('attivo', true)
+          .order('created_at', { ascending: false });
+
+        if (error) throw error;
+
+        tuttiLibri = data || [];
+        console.log(`✅ Caricati ${tuttiLibri.length} libri`);
+        renderLibri();
+        
+      } catch (error) {
+        console.error('❌ Errore caricamento libri:', error);
+        mostraErrore('Errore caricamento novità');
+      }
+    }
+
+    async function caricaProvince() {
+      try {
+        const { data, error } = await window.supabase
+          .from('istituti')
+          .select('provincia')
+          .order('provincia');
+
+        if (error) throw error;
+
+        const provinceUniche = [...new Set(data.map(i => i.provincia))];
+        province = provinceUniche.filter(p => p).sort();
+
+        const selectProvincia = document.getElementById('input-provincia');
+        selectProvincia.innerHTML = '<option value="">Seleziona provincia</option>' +
+          province.map(p => `<option value="${p}">${p}</option>`).join('');
+
+        console.log(`✅ Caricate ${province.length} province`);
+
+      } catch (error) {
+        console.error('❌ Errore province:', error);
+      }
+    }
+
+    async function caricaComuni() {
+      const provincia = document.getElementById('input-provincia').value;
+      const selectComune = document.getElementById('input-comune');
+      const selectScuola = document.getElementById('input-scuola');
+
+      if (!provincia) {
+        selectComune.disabled = true;
+        selectScuola.disabled = true;
+        return;
+      }
+
+      try {
+        const { data, error } = await window.supabase
+          .from('istituti')
+          .select('comune')
+          .eq('provincia', provincia)
+          .order('comune');
+
+        if (error) throw error;
+
+        const comuniUnici = [...new Set(data.map(i => i.comune))];
+        const comuni = comuniUnici.filter(c => c).sort();
+
+        selectComune.disabled = false;
+        selectComune.innerHTML = '<option value="">Seleziona comune</option>' +
+          comuni.map(c => `<option value="${c}">${c}</option>`).join('');
+
+        selectScuola.disabled = true;
+        selectScuola.innerHTML = '<option value="">Prima seleziona il comune</option>';
+
+      } catch (error) {
+        console.error('❌ Errore comuni:', error);
+      }
+    }
+
+    async function caricaScuole() {
+      const provincia = document.getElementById('input-provincia').value;
+      const comune = document.getElementById('input-comune').value;
+      const selectScuola = document.getElementById('input-scuola');
+
+      if (!provincia || !comune) {
+        selectScuola.disabled = true;
+        return;
+      }
+
+      try {
+        const mapProvince = {
+          'ALESSANDRIA': 'AL',
+          'GENOVA': 'GE', 
+          'SAVONA': 'SV',
+          'LA SPEZIA': 'SP',
+          'IMPERIA': 'IM'
+        };
+        
+        const siglaProvincia = mapProvince[provincia] || provincia;
+
+        const { data, error } = await window.supabase
+          .from('istituti')
+          .select('id, nome, codice, agente')
+          .eq('provincia', siglaProvincia)
+          .eq('comune', comune)
+          .order('nome');
+
+        if (error) throw error;
+
+        scuole = data || [];
+
+        selectScuola.disabled = false;
+        selectScuola.innerHTML = '<option value="">Seleziona scuola</option>' +
+          scuole.map(s => 
+            `<option value="${s.id}" data-codice="${s.codice}" data-agente="${s.agente || ''}">${s.nome}</option>`
+          ).join('');
+
+      } catch (error) {
+        console.error('❌ Errore scuole:', error);
+      }
+    }
+
+    function popolaSelectDiscipline() {
+      const selectDisciplina = document.getElementById('input-disciplina');
+      const discipline = DISCIPLINE[gradoAttivo];
+      
+      selectDisciplina.innerHTML = '<option value="">Seleziona disciplina</option>' +
+        discipline.map(d => `<option value="${d.nome}">${d.icon} ${d.nome}</option>`).join('');
+    }
+
+    function renderDiscipline() {
+      const container = document.getElementById('discipline-list');
+      const discipline = DISCIPLINE[gradoAttivo];
+      
+      const conteggi = {};
+      tuttiLibri
+        .filter(l => l.grado === gradoAttivo)
+        .forEach(l => {
+          const disc = normalizzaDisciplina(l.disciplina);
+          conteggi[disc] = (conteggi[disc] || 0) + 1;
+        });
+
+      const totale = Object.values(conteggi).reduce((a, b) => a + b, 0);
+      
+      let html = `
+        <div class="disciplina-item ${!disciplinaAttiva ? 'active' : ''}" onclick="filtraDisciplina(null)">
+          <span>📚 Tutte le discipline</span>
+          <span class="count">${totale}</span>
+        </div>
+      `;
+
+      discipline.forEach(d => {
+        const count = conteggi[d.id] || 0;
+        if (count > 0) {
+          html += `
+            <div class="disciplina-item ${disciplinaAttiva === d.id ? 'active' : ''}" onclick="filtraDisciplina('${d.id}')">
+              <span>${d.icon} ${d.nome}</span>
+              <span class="count">${count}</span>
+            </div>
+          `;
+        }
+      });
+
+      container.innerHTML = html;
+    }
+
+    function renderLibri() {
+      const container = document.getElementById('libri-container');
+      
+      let libriFiltrati = tuttiLibri.filter(l => l.grado === gradoAttivo);
+      
+      if (disciplinaAttiva) {
+        libriFiltrati = libriFiltrati.filter(l => 
+          normalizzaDisciplina(l.disciplina) === disciplinaAttiva
+        );
+      }
+
+      if (libriFiltrati.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <div class="empty-icon">📚</div>
+            <h3>Nessuna novità disponibile</h3>
+            <p>Al momento non ci sono libri in questa categoria.</p>
+          </div>
+        `;
+        return;
+      }
+
+      const html = `
+        <div class="libri-grid">
+          ${libriFiltrati.map(libro => renderCardLibro(libro)).join('')}
+        </div>
+      `;
+
+      container.innerHTML = html;
+    }
+
+    function renderCardLibro(libro) {
+      // ⬇️ MODIFICATO: Controlla se ci sono materiali collegati
+      const materialiCollegati = tuttiMateriali.filter(m => m.libro_collegato_isbn === libro.isbn);
+      const hasMateriali = materialiCollegati.length > 0;
+      
+      return `
+        <div class="libro-card">
+          <div class="libro-copertina">
+            ${libro.copertina_url ? 
+              `<img src="${libro.copertina_url}" alt="${libro.titolo}">` :
+              '📕'
+            }
+          </div>
+          <div class="libro-info">
+            <div class="libro-titolo">${libro.titolo}</div>
+            <div class="libro-editore">${libro.editore}</div>
+            
+            <div class="libro-badges">
+              <span class="badge badge-grado">
+                ${libro.grado === 'ss1' ? 'Sec. I Grado' : 'Sec. II Grado'}
+              </span>
+              <span class="badge badge-disciplina">${libro.disciplina}</span>
+            </div>
+
+            ${libro.descrizione ? `
+              <p style="color: #666; font-size: 0.9rem; line-height: 1.4; margin-bottom: 1rem;">
+                ${libro.descrizione.substring(0, 120)}${libro.descrizione.length > 120 ? '...' : ''}
+              </p>
+            ` : ''}
+
+            <div class="libro-actions">
+              ${hasMateriali ? `
+                <button class="btn btn-outline" onclick="mostraDettaglio('${libro.isbn}')" style="font-size: 0.9rem;">
+                  📦 Materiali
+                </button>
+              ` : ''}
+              <button class="btn btn-primary" onclick="apriRichiesta('${libro.isbn}')">
+                📝 Richiedi
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function normalizzaDisciplina(disciplina) {
+      const map = {
+        'italiano': 'italiano',
+        'matematica': 'matematica',
+        'storia': 'storia',
+        'geografia': 'geografia',
+        'filosofia': 'filosofia',
+        'fisica': 'fisica',
+        'chimica': 'chimica',
+        'scienze': 'scienze',
+        'inglese': 'inglese',
+        'francese': 'francese',
+        'spagnolo': 'spagnolo',
+        'latino': 'latino',
+        'greco': 'greco',
+        'arte': 'arte',
+        'musica': 'musica',
+        'tecnologia': 'tecnologia',
+        'educazione fisica': 'ed_fisica',
+        'economia': 'economia',
+        'diritto': 'diritto',
+        'informatica': 'informatica',
+        'religione': 'religione'
+      };
+      
+      const disc = (disciplina || '').toLowerCase().trim();
+      return map[disc] || disc;
+    }
+
+    function mostraToast(messaggio, tipo = 'info') {
+      const toast = document.createElement('div');
+      toast.className = `toast toast-${tipo}`;
+      toast.innerHTML = `
+        <div style="font-size: 1.5rem;">
+          ${tipo === 'success' ? '✅' : '❌'}
+        </div>
+        <div>${messaggio}</div>
+      `;
+      
+      document.body.appendChild(toast);
+      setTimeout(() => toast.classList.add('show'), 100);
+      setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 300);
+      }, 4000);
+    }
+
+    function mostraErrore(messaggio) {
+      document.getElementById('libri-container').innerHTML = `
+        <div class="empty-state">
+          <div class="empty-icon">❌</div>
+          <h3>Errore</h3>
+          <p>${messaggio}</p>
+          <button class="btn btn-primary" onclick="location.reload()">🔄 Ricarica</button>
+        </div>
+      `;
+    }
+
+    function switchGrado(grado) {
+      gradoAttivo = grado;
+      disciplinaAttiva = null;
+      
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      renderDiscipline();
+      renderLibri();
+      popolaSelectDiscipline();
+    }
+
+    function filtraDisciplina(disciplina) {
+      disciplinaAttiva = disciplina;
+      renderDiscipline();
+      renderLibri();
+    }
+
+    // ⬇️⬇️⬇️ FUNZIONE MODIFICATA ⬇️⬇️⬇️
+    function mostraDettaglio(isbn) {
+      const libro = tuttiLibri.find(l => l.isbn === isbn);
+      if (!libro) return;
+
+      libroSelezionato = libro;
+
+      document.getElementById('modal-titolo').textContent = libro.titolo;
+      document.getElementById('modal-editore').textContent = libro.editore;
+
+      let bodyHtml = '';
+
+      // Descrizione
+      if (libro.descrizione) {
+        bodyHtml += `
+          <div class="modal-section">
+            <h3>📝 Descrizione</h3>
+            <p style="line-height: 1.6; color: #2c3e50;">${libro.descrizione}</p>
+          </div>
+        `;
+      }
+
+      // Video YouTube
+      if (libro.video_youtube) {
+        const videoId = libro.video_youtube.includes('youtube.com') || libro.video_youtube.includes('youtu.be') 
+          ? libro.video_youtube.split('/').pop().split('?')[0].split('&')[0]
+          : libro.video_youtube;
+        
+        bodyHtml += `
+          <div class="modal-section">
+            <h3>🎥 Video Presentazione</h3>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; margin-bottom: 1rem;">
+              <iframe 
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                src="https://www.youtube.com/embed/${videoId}" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        `;
+      }
+
+      // Link Hub Scuola / Versione Digitale
+      if (libro.url_hub_scuola) {
+        bodyHtml += `
+          <div class="modal-section">
+            <a href="${libro.url_hub_scuola}" target="_blank" class="btn btn-primary" style="width: 100%; display: block; text-decoration: none; background: linear-gradient(135deg, #0066cc, #004499); padding: 1.5rem; font-size: 1.1rem;">
+              💻 SFOGLIA LA VERSIONE DIGITALE
+            </a>
+            <p style="text-align: center; color: #666; font-size: 0.9rem; margin-top: 0.5rem;">
+              Accedi gratuitamente al libro digitale su HUB Scuola
+            </p>
+          </div>
+        `;
+      }
+
+      // ⬇️ MATERIALI DAL DATABASE ⬇️
+      const materialiCollegati = tuttiMateriali.filter(m => m.libro_collegato_isbn === isbn);
+      
+      if (materialiCollegati.length > 0) {
+        const iconeMateriali = {
+          'pdf': '📄',
+          'ppt': '📊',
+          'pptx': '📊',
+          'video': '🎥',
+          'audio': '🎵',
+          'excel': '📗',
+          'word': '📘'
+        };
+
+        bodyHtml += `
+          <div class="modal-section">
+            <h3>📦 Materiali Didattici</h3>
+            <div class="materiali-list">
+              ${materialiCollegati.map(mat => `
+                <a href="${mat.url_download}" target="_blank" class="materiale-item">
+                  <div class="materiale-icon">${iconeMateriali[mat.tipo] || '📎'}</div>
+                  <div class="materiale-info">
+                    <div class="materiale-nome">${mat.titolo}</div>
+                    ${mat.descrizione ? `<div class="materiale-desc">${mat.descrizione}</div>` : ''}
+                  </div>
+                  <div>→</div>
+                </a>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+      // ⬆️ FINE MATERIALI DAL DATABASE ⬆️
+
+      // Bottone richiesta
+      bodyHtml += `
+        <div class="modal-section">
+          <button class="btn btn-primary" onclick="chiudiModal(); apriRichiesta('${libro.isbn}');" style="width: 100%;">
+            📝 Richiedi questo Saggio Gratuito
+          </button>
+        </div>
+      `;
+
+      document.getElementById('modal-body-content').innerHTML = bodyHtml;
+      document.getElementById('modal-dettaglio').classList.add('active');
+    }
+    // ⬆️⬆️⬆️ FINE FUNZIONE MODIFICATA ⬆️⬆️⬆️
+
+    function chiudiModal() {
+      document.getElementById('modal-dettaglio').classList.remove('active');
+    }
+
+    function apriRichiesta(isbn) {
+      const libro = tuttiLibri.find(l => l.isbn === isbn);
+      if (!libro) return;
+
+      libroSelezionato = libro;
+
+      document.getElementById('libro-selezionato-info').innerHTML = `
+        <h4 style="margin: 0 0 0.5rem 0;">📕 ${libro.titolo}</h4>
+        <p style="margin: 0; color: #666;">
+          ${libro.editore} • ISBN: ${libro.isbn}<br>
+          ${libro.grado === 'ss1' ? 'Secondaria I Grado' : 'Secondaria II Grado'} • ${libro.disciplina}
+        </p>
+      `;
+
+      document.getElementById('form-richiesta').reset();
+      document.getElementById('input-comune').disabled = true;
+      document.getElementById('input-scuola').disabled = true;
+
+      document.getElementById('modal-richiesta').classList.add('active');
+    }
+
+    function chiudiModalRichiesta() {
+      document.getElementById('modal-richiesta').classList.remove('active');
+    }
+
+    async function inviaRichiesta(event) {
+      event.preventDefault();
+
+      const nome = document.getElementById('input-nome').value.trim();
+      const cognome = document.getElementById('input-cognome').value.trim();
+      const email = document.getElementById('input-email').value.trim();
+      const provincia = document.getElementById('input-provincia').value;
+      const comune = document.getElementById('input-comune').value;
+      const scuolaId = document.getElementById('input-scuola').value;
+      const disciplina = document.getElementById('input-disciplina').value;
+      const note = document.getElementById('input-note').value.trim();
+
+      if (!libroSelezionato) {
+        mostraToast('Errore: nessun libro selezionato', 'error');
+        return;
+      }
+
+      const scuolaOption = document.querySelector(`#input-scuola option[value="${scuolaId}"]`);
+      const codiceScuola = scuolaOption?.getAttribute('data-codice');
+      const agenteAssegnato = scuolaOption?.getAttribute('data-agente');
+      const scuolaNome = scuolaOption?.textContent;
+
+      const submitBtn = event.target.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = '⏳ Invio in corso...';
+
+      try {
+        const { data: richiesta, error: errorRichiesta } = await window.supabase
+          .from('richieste_sito')
+          .insert({
+            nome,
+            cognome,
+            email,
+            scuola_nome: scuolaNome,
+            provincia,
+            comune,
+            disciplina,
+            isbn: libroSelezionato.isbn,
+            titolo: libroSelezionato.titolo,
+            editore: libroSelezionato.editore,
+            note,
+            codice_scuola: codiceScuola,
+            agente_assegnato: agenteAssegnato,
+            stato: 'nuova',
+            fonte: 'portale_pubblico'
+          })
+          .select()
+          .single();
+
+        if (errorRichiesta) throw errorRichiesta;
+
+        chiudiModalRichiesta();
+        
+        alert(`✅ RICHIESTA INVIATA!\n\nGentile Prof. ${cognome},\n\nLa sua richiesta del saggio "${libroSelezionato.titolo}" è stata registrata.\n\nRiceverà una email all'indirizzo:\n${email}\n\nIl nostro agente la contatterà a breve.\n\nGrazie!`);
+        
+        mostraToast('Richiesta inviata con successo!', 'success');
+
+      } catch (error) {
+        console.error('❌ Errore:', error);
+        mostraToast('Errore durante l\'invio: ' + error.message, 'error');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }
+    }
+
+    window.switchGrado = switchGrado;
+    window.filtraDisciplina = filtraDisciplina;
+    window.mostraDettaglio = mostraDettaglio;
+    window.chiudiModal = chiudiModal;
+    window.apriRichiesta = apriRichiesta;
+    window.chiudiModalRichiesta = chiudiModalRichiesta;
+    window.caricaComuni = caricaComuni;
+    window.caricaScuole = caricaScuole;
+    window.inviaRichiesta = inviaRichiesta;
+
+    console.log('✅ Portale Pubblico Novità inizializzato!');
+  </script>
+
+</body>
+</html>
